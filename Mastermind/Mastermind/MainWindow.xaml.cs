@@ -16,15 +16,17 @@ namespace Mastermind
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<string> colors = new List<string> { "Red", "Yellow", "Orange", "White", "Green", "Bleu" };
+        List<string> chosenColors = new List<string>();
         public MainWindow()
         {
             InitializeComponent();
             RandomColors();
+            ComboBoxes();
         }
         private void RandomColors()
         {
-            List<string> colors = new List<string> {"Red", "Yellow", "Orange", "White", "Green", "Bleu"};
-            List<string> chosenColors = new List<string>();
+
             Random random = new Random();
             for (int i = 0; i < 4; i++) 
             { 
@@ -34,6 +36,18 @@ namespace Mastermind
             }
             string colorstring = string.Join(",", chosenColors);
             Title = "Mastermind: " + colorstring;
+        }
+
+        private void ComboBoxes()
+        {
+
+            foreach (string colors in colors)
+            {
+                comboBox1.Items.Add(colors);
+                comboBox2.Items.Add(colors);
+                comboBox3.Items.Add(colors);
+                comboBox4.Items.Add(colors);
+            }
         }
     }
 }

@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="Mastermind" Height="450" Width="800">
     <Grid>
-        <ComboBox HorizontalAlignment="Left" Margin="61,75,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="245,75,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="442,75,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="624,75,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name="comboBox1" HorizontalAlignment="Left" Margin="61,75,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name="comboBox2" HorizontalAlignment="Left" Margin="245,75,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name="comboBox3" HorizontalAlignment="Left" Margin="442,75,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name="comboBox4" HorizontalAlignment="Left" Margin="624,75,0,0" VerticalAlignment="Top" Width="120"/>
         <Button Name="validateButton" Content="validate" HorizontalAlignment="Center" Margin="0,337,0,0" VerticalAlignment="Top" Height="33" Width="104"/>
 
     </Grid>
