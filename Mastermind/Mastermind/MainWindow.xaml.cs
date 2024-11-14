@@ -17,7 +17,7 @@ namespace Mastermind
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<string> colors = new List<string> { "Red", "Yellow", "Orange", "White", "Green", "Bleu" };
+        List<string> colors = new List<string> { "Red", "Yellow", "Orange", "White", "Green", "Blue" };
         List<string> chosenColors = new List<string>();
         public MainWindow()
         {
@@ -76,7 +76,38 @@ namespace Mastermind
 
         private void validateButton_Click(object sender, RoutedEventArgs e)
         {
+            // Verkrijg de geselecteerde kleuren van de comboboxen
+            string selectedColor1 = comboBox1.SelectedItem?.ToString();
+            string selectedColor2 = comboBox2.SelectedItem?.ToString();
+            string selectedColor3 = comboBox3.SelectedItem?.ToString();
+            string selectedColor4 = comboBox4.SelectedItem?.ToString();
 
-        }
+            // Zorg ervoor dat de gebruiker iets heeft geselecteerd in elke combobox
+            if (selectedColor1 == null || selectedColor2 == null || selectedColor3 == null || selectedColor4 == null)
+            {
+                MessageBox.Show("Kies alstublieft een kleur voor elke combobox.");
+                return;
+            }
+
+            // Zet de borders van de labels terug naar de standaard (geen rand)
+            label1.BorderBrush = null;
+            label2.BorderBrush = null;
+            label3.BorderBrush = null;
+            label4.BorderBrush = null;
+
+            // Controleer voor elke kleur of deze juist is (kleur en positie)
+            if (selectedColor1 == chosenColors[0]) label1.BorderBrush = new SolidColorBrush(Colors.DarkRed); // Correcte kleur op de juiste plaats
+            else if (chosenColors.Contains(selectedColor1)) label1.BorderBrush = new SolidColorBrush(Colors.Wheat); // Kleur aanwezig, maar op de verkeerde plaats
+
+            if (selectedColor2 == chosenColors[1]) label2.BorderBrush = new SolidColorBrush(Colors.DarkRed); // Correcte kleur op de juiste plaats
+            else if (chosenColors.Contains(selectedColor2)) label2.BorderBrush = new SolidColorBrush(Colors.Wheat); // Kleur aanwezig, maar op de verkeerde plaats
+
+            if (selectedColor3 == chosenColors[2]) label3.BorderBrush = new SolidColorBrush(Colors.DarkRed); // Correcte kleur op de juiste plaats
+            else if (chosenColors.Contains(selectedColor3)) label3.BorderBrush = new SolidColorBrush(Colors.Wheat); // Kleur aanwezig, maar op de verkeerde plaats
+
+            if (selectedColor4 == chosenColors[3]) label4.BorderBrush = new SolidColorBrush(Colors.DarkRed); // Correcte kleur op de juiste plaats
+            else if (chosenColors.Contains(selectedColor4)) label4.BorderBrush = new SolidColorBrush(Colors.Wheat); // Kleur aanwezig, maar op de verkeerde plaats
+
+        }    
     }
 }
